@@ -5,11 +5,11 @@ from flask import render_template
 def index():
     return render_template('index.html')
 
-@app.router('/indice')
+@app.route('/')
 def indice():
     return render_template('indice.html')
 
-@app.router('/final')
+@app.route('/')
 def final():
     return render_template('final.html')
     
