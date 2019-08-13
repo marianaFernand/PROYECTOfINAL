@@ -4,17 +4,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title%}{% endblock%}</title>
-    
+    <link rel='stylesheet'href='./static/css/normalize.css'>
+    <link rel='stylesheet'href='./static/css/skeleton.css'>
+    <link rel='stylesheet'href='./static/css/styles.css'>
 </head>
 <body>
-    <header>
-        <p>
-            <a href="./">Inicio</a> | <a href = "./indice">Second Page</a> | <a href = "./final"> Third Page</a>
-        </p>
-    </header>
-    {% block body%}{%endblock%}
-    
-    <footer>
+    <div class = 'header'>
+        <div class = 'container'>
+            <h1>No Me CuenTes PelicuLas</h1>
+            <h2>MeJor la Vemos</h2>
+        </div>
+    </div>
+    <div class = 'container'>
+         
+        {% if errores %}
+        <div class="mensajes-error">
+            <ul class="flash-messages">
+            {% for error in errores %}
+                <li>{{ error }}</li>    
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        {% block body %}{% endblock%}
+    </div>
+ <footer class = 'container'>
         <p>
             &copy;2019 - Mariana.F.G.
         </p>

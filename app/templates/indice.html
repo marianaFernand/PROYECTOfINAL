@@ -1,7 +1,31 @@
-{ %extends "base.html"%}
-{% block title %} No Me CuenTes PelicuLas{% endblock%}
+{% extends "base.html"%}
+{% block title %} No Me CuenTes PelicuLas {% endblock%}
 {% block body %}
     <h1 class= "titulo-pagina">No Me CuenTes PelicuLas</h1>
-    <h1>MeJor la Vemos</h1>
-    <p class="titulo">TiTulo:</p>
+    <h2>MeJor la Vemos</h2>
+    
+    <form action="/indice" method="GET">
+        <div class = 'container'>
+                <p class ='menu'>
+                   <a href="./">Busqueda</a> 
+               </p>
+               {% if errores %}
+               <div class="mensajes-error">
+                   <ul class="flash-messages">
+                   {% for error in errores %}
+                       <li>{{ error }}</li>    
+                   {% endfor %}
+                   </ul>
+               </div>
+               {% endif %}
+               {% block body %}{% endblock%}
+           </div>
+        
+        
+        <!--DEBO METER LAS PELIS CON SOLO CIERTOS DATOS, SI ME DA TIEMPO METER MÁS BOTONES
+        PAG SIGUIENTE -->
+        <button type="submit" class ='butDeta'>Detalle</button>
+    </form>
+
+  
 {% endblock%}
