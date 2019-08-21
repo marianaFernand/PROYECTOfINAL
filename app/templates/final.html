@@ -1,23 +1,20 @@
 {% extends "base.html"%}
-{% block title %} No Me CuenTes PelicuLas{% endblock%}
+{% block title %} Tu Pelicula{% endblock%}
 {% block body %}
-    <h1 class= "titulo-pagina">No Me CuenTes PelicuLas</h1>
-    <h2>MeJor la Vemos</h2>
+    <h1 class= "titulo-pagina">Tu Pelicula</h1>
+
+    {% if form.errors['general'] %}
+        {% for error in form.errors['general'] %}
+            <p class="general-error"> {{ error }} </p>
+        {% endfor %}
+    {% endif %}  
     
     <form action="/final" method="GET">
         <div class = 'container'>
                 <p class ='menu'>
                    <a href="./">Busqueda</a> | <a href = "./indice">Indice</a>
                </p>
-               {% if errores %}
-               <div class="mensajes-error">
-                   <ul class="flash-messages">
-                   {% for error in errores %}
-                       <li>{{ error }}</li>    
-                   {% endfor %}
-                   </ul>
-               </div>
-               {% endif %}
+               
                {% block body %}{% endblock%}
            </div>
         <button type="submit" class ='butVol'>Volver</button>

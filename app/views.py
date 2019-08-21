@@ -8,8 +8,7 @@ ficheroPelicula = 'data/pelicula.txt'
 def index():
     if request.methods == 'POST':
         Fpelicula = open(ficheroPelicula,'a+')
-        registro = (request.values['comentarios'])
-        #lo tomo de index? el value? o es otra cosa
+        registro = request.values['comentarios'],
         Fpelicula.write(registro)
         Fpelicula.close()
         return redirect (ulr_for('indice'))

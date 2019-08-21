@@ -15,20 +15,8 @@
             <h2>MeJor la Vemos</h2>
         </div>
     </div>
-    <div class = 'container'>
-         
-        {% if errores %}
-        <div class="mensajes-error">
-            <ul class="flash-messages">
-            {% for error in errores %}
-                <li>{{ error }}</li>    
-            {% endfor %}
-            </ul>
-        </div>
-        {% endif %}
-        {% block body %}{% endblock%}
-    </div>
- <footer class = 'container'>
+    
+    <footer class = 'container'>
         <p>
             &copy;2019 - Mariana.F.G.
         </p>

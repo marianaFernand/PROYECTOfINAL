@@ -4,21 +4,17 @@
     padding-top: 16px;
 }
 
-.mensajes-error {
-    background-color:#85BCC5;
-    color: black;
-    font-size: 0.8em;
+.general-error {
+    color: red;
+    background-color: yellow;
     font-weight: bold;
-    padding: 10px;
-    line-height: 0.8em;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-align: center;
+    border: 1px solid black;
 }
-
-.flash-messages {
-    list-style: none;
-    margin-bottom: -5px;
-}
-
-.
-.butAcep {
+.miboton {
+    background-color: #A0D789;
+    color: black;
     margin-left: 8px;
 }
