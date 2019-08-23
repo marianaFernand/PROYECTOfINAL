@@ -1,16 +1,15 @@
-{% extends "base.html"%}
-{% block title %} No Me CuenTes PelicuLas{% endblock%}
-{% block body %}
-  
-    
-    <form action="/index" method="POST">
-        
-        <textarea name='comentarios' id= 'id' rows="2" cols='60'>Escribe aquí el titulo deseado</textarea>
-        <a href="/indice" class = "miboton button-primary"> Aceptar </a>
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block body %} 
+    <p>Escribe el titulo</p>
+    <form action="titulo" method="POST">
+        {{ form.hidden_tag() }}
+        <div class="row">
+            <div class="twelve columns">  
+                <label for="titulo">{{form.titulo.label}}</label>
+                {{form.titulo(class="u-full-width", type="text" placeholder ="titulo" id="titulo")}}
+        </div>
+        <br/>
+            <a href="/indice" class="button button-primary">Aceptar</a>      
     </form>
-    {% if form.errors['general'] %}
-    {% for error in form.errors['general'] %}
-        <p class="general-error"> {{ error }} </p>
-    {% endfor %}
-    {% endif %}
-{% endblock%}
+{% endblock %}

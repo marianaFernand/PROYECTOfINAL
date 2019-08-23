@@ -1,31 +1,22 @@
-{% extends "base.html"%}
-{% block title %} PosiBles oPCIones {% endblock%}
-{% block body %}
-    
-    
-    
-    <form action="/indice" method="GET">
-        <div class = 'container'>
-                <p class ='menu'>
-                   <a href="./">Busqueda</a> 
-               </p>
-               {% if errores %}
-               <div class="mensajes-error">
-                   <ul class="flash-messages">
-                   {% for error in errores %}
-                       <li>{{ error }}</li>    
-                   {% endfor %}
-                   </ul>
-               </div>
-               {% endif %}
-               {% block body %}{% endblock%}
-           </div>
-        
-        
-        <!--DEBO METER LAS PELIS CON SOLO CIERTOS DATOS, SI ME DA TIEMPO METER MÁS BOTONES
-        PAG SIGUIENTE -->
-        <button type="submit" class ='butDeta'>Detalle</button>
+{% extends 'base.html' %}
+{% block title %} Listado {% endblock %}
+{% block body %} 
+    <form action="/listado" method="POST">
+        <table class="u-full-width">
+            <tr>
+                <th>Sel.</td>
+                <a href="http://www.omdbapi.com">
+                    <img src="http://www.omdbapi.com/?apikey={}&=" />
+                </a>
+                <th>titulo</td>
+                <th>año</td>
+            </tr>
+        </table>    
+        <br/>
+            <button name="btnselected" value="Select" type="submit" class="miboton  button-primary">Detalle</button>
+    {% if form.paginas['pagina'] %}
+            <button name="btnselected" value="Select" type="submit" class="miboton  button-primary">ant.</button>
+            <button name="btnselected" value="Select" type="submit" class="miboton  button-primary">sig.</button>
+    {% endif %}
     </form>
-
-  
-{% endblock%}
+{% endblock %}

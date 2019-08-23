@@ -1,23 +1,26 @@
-{% extends "base.html"%}
-{% block title %} Tu Pelicula{% endblock%}
-{% block body %}
-    <h1 class= "titulo-pagina">Tu Pelicula</h1>
-
-    {% if form.errors['general'] %}
-        {% for error in form.errors['general'] %}
-            <p class="general-error"> {{ error }} </p>
-        {% endfor %}
-    {% endif %}  
-    
-    <form action="/final" method="GET">
-        <div class = 'container'>
-                <p class ='menu'>
-                   <a href="./">Busqueda</a> | <a href = "./indice">Indice</a>
-               </p>
-               
-               {% block body %}{% endblock%}
-           </div>
-        <button type="submit" class ='butVol'>Volver</button>
+{% extends 'base.html' %}
+{% block title %} te cuento un poco... {% endblock %}
+{% block body %} 
+    <form action="/listado" method="POST">
+        <table class="u-full-width">
+            <tr>
+                <td>
+                    <a href="http://www.omdbapi.com">
+                        <img src="http://www.omdbapi.com/?apikey={}&=" />
+                    </a>
+                </td>
+                <td>
+                    <tr>Titulo</tr>
+                    <tr>Año</tr>
+                    <tr>Director</tr>
+                    <tr>Guionista</tr>
+                    <tr>Reparto</tr>
+                    <tr>Argumento</tr>
+                    <tr>Genero</tr>
+                </td>       
+            </tr>
+        </table>    
+        <br/>
+            <button name="btnselected" value="variable detalles" type="submit" class="miboton  button-primary">Volver</button>
     </form>
-  
-{% endblock%}
+{% endblock %}
