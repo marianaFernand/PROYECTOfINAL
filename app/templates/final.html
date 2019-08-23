@@ -1,14 +1,10 @@
 {% extends 'base.html' %}
 {% block title %} te cuento un poco... {% endblock %}
 {% block body %} 
-    <form action="/listado" method="POST">
+    <form action="/listado" method="GET">
         <table class="u-full-width">
             <tr>
-                <td>
-                    <a href="http://www.omdbapi.com">
-                        <img src="http://www.omdbapi.com/?apikey={}&=" />
-                    </a>
-                </td>
+            {% block imagen %} pelicula[imagen] {% endblock %} 
                 <td>
                     <tr>Titulo</tr>
                     <tr>Año</tr>
@@ -21,6 +17,6 @@
             </tr>
         </table>    
         <br/>
-            <button name="btnselected" value="variable detalles" type="submit" class="miboton  button-primary">Volver</button>
+            <button name="btnselected" value="pelicula[q,pag]" type="submit" class="miboton  button-primary">Volver</button>
     </form>
 {% endblock %}

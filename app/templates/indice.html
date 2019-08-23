@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 {% block title %} Listado {% endblock %}
 {% block body %} 
-    <form action="/listado" method="POST">
-        <table class="u-full-width">
-            <tr>
-                <th>Sel.</td>
-                <a href="http://www.omdbapi.com">
-                    <img src="http://www.omdbapi.com/?apikey={}&=" />
-                </a>
-                <th>titulo</td>
-                <th>año</td>
-            </tr>
-        </table>    
+    <form action="/listado" method="GET">
+        {% for id in form.pelicula[titulo] %}
+            <table class="u-full-width">
+                <tr>
+                    <th>Sel.</td>
+                    {% block imagen %} pelicula[imagen] {% endblock %}
+                    <th>titulo</td>
+                    <th>año</td>
+                </tr>
+            </table>
+        {% endfor %}   
         <br/>
             <button name="btnselected" value="Select" type="submit" class="miboton  button-primary">Detalle</button>
-    {% if form.paginas['pagina'] %}
+    {% if form.paginas > 1 %}
             <button name="btnselected" value="Select" type="submit" class="miboton  button-primary">ant.</button>
             <button name="btnselected" value="Select" type="submit" class="miboton  button-primary">sig.</button>
     {% endif %}
