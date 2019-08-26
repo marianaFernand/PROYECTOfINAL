@@ -2,7 +2,7 @@ from app import app
 from flask import render_template, request ,redirect, url_for, flash
 import csv 
 
-ficheroPelicula = 'data/pelicula.txt'
+ficheroPelicula = str'data.json'
 
 @app.route('/', methods= ['GET','POST'])
 def index():

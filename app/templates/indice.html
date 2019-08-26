@@ -3,27 +3,21 @@
 {% block body %} 
     <form action="/listado" method="GET">
         <table class="u-full-width">
+            {% for pelicula in peliculas %}    
                 <tr>
-                    <th>sel.</th>
                     <td rowspan="2">{{ pelicula[imagen] }}</td>
-                    <th>Titulo:</th>
+                    <th>Titulo</th>
                     <td>{{ pelicula[titulo] }}</td>
+                    <td rowspan="2"><button name="btnselected" value="Select" type="submit" class="miboton  button-primary">Detalle</button></td>
                 </tr>
                 <tr>
-                    <th></th>
                     <th>Año</th>
                     <td>{{ pelicula[año] }}</td>
                 </tr>
-                
-                {% for titulo in pelicula[peliculas] %}
-                <tr>
-                    <td><input type="radio" name="Select" value="sel."></td>
-                    <td>{{titulo[0]}}</td>
-                </tr>
-            </table>
+        </table>
         {% endfor %}   
         <br/>
-            <button name="btnselected" value="Select" type="submit" class="miboton  button-primary">Detalle</button>
+            
     {% if paginas > 1 %}
             <button name="btnselected" value="Select" type="submit" class="miboton  button-primary">ant.</button>
             <button name="btnselected" value="Select" type="submit" class="miboton  button-primary">sig.</button>
