@@ -5,11 +5,12 @@
     <form action="titulo" method="POST">
         {{ form.hidden_tag() }}
         <div class="row">
-            <div class="twelve columns">  
+            <div class="busqueda">  
                 <label for="titulo">{{form.titulo.label}}</label>
                 {{form.titulo(class="u-full-width", type="text" placeholder ="titulo" id="titulo")}}
-        </div>
+            </div>
+        </div>   
         <br/>
-            <a href="/indice" class="button button-primary">Aceptar</a>      
+        <button name="btnselected" value="aceptar" type="submit" class="miboton  button-primary">Aceptar</button>
     </form>
 {% endblock %}

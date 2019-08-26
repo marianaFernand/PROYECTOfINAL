@@ -2,19 +2,29 @@
 {% block title %} Listado {% endblock %}
 {% block body %} 
     <form action="/listado" method="GET">
-        {% for id in form.pelicula[titulo] %}
-            <table class="u-full-width">
+        <table class="u-full-width">
                 <tr>
-                    <th>Sel.</td>
-                    {% block imagen %} pelicula[imagen] {% endblock %}
-                    <th>titulo</td>
-                    <th>año</td>
+                    <th>sel.</th>
+                    <td>{% block imagen %} pelicula[imagen] {% endblock %}</td>
+                </tr>
+                <tr>
+                    <th>titulo</th>
+                    <td>{% block datos %} pelicula[titulo] {% endblock %}</td>
+                </tr>
+                <tr>
+                    <th>año</th>
+                    <td>{% block datos %} pelicula[año] {% endblock %}</td>
+                </tr>
+                {% for titulo in pelicula[peliculas] %}
+                <tr>
+                    <td><input type="radio" name="Select" value="{{ pelicula[peliculas] }}"></td>
+                    <td>{{titulo[0]}}</td>
                 </tr>
             </table>
         {% endfor %}   
         <br/>
             <button name="btnselected" value="Select" type="submit" class="miboton  button-primary">Detalle</button>
-    {% if form.paginas > 1 %}
+    {% if paginas > 1 %}
             <button name="btnselected" value="Select" type="submit" class="miboton  button-primary">ant.</button>
             <button name="btnselected" value="Select" type="submit" class="miboton  button-primary">sig.</button>
     {% endif %}
