@@ -3,36 +3,36 @@
 {% block body %} 
     <form action="/detalle" method="GET">
         <table class="u-full-width">
-            {% block imagen %} pelicula[imagen] {% endblock %}
             <tr>
-                <th>Titulo</th>
-                <td>{% block datos %} pelicula[titulo] {% endblock %}</td>
+                <td rowspan="7">{{ pelicula[imagen] }}</td>
+                <th>Titulo:</th>
+                    <td>{{ pelicula[titulo] }}</td>
             </tr>
             <tr>
                 <th>Año</th>
-                <td>{% block datos %} pelicula[año] {% endblock %}</td>
-            </tr>
-            <tr>
-                <th>Director</th>
-                <td>{% block datos %} pelicula[director] {% endblock %}</td>
-            </tr> 
-            <tr>
-                <th>Guionista</th>
-                <td>{% block datos %} pelicula[guionista] {% endblock %}</td>
-            </tr>
-            <tr>
-                <th>Reparto</th>
-                <td>{% block datos %} pelicula[reparto] {% endblock %}</td>
-            </tr>
-            <tr>
-                <th>Argumento</th>
-                <td>{% block datos %} pelicula[argumento] {% endblock %}</td>
+                <td>{{ pelicula[año] }}</td>
             </tr>
             <tr>
                 <th>Genero</th>
-                <td>{% block datos %} pelicula[genero] {% endblock %}</td>
+                <td>{{ pelicula[genero] }}</td>
             </tr>
-        </table>    
+            <tr>
+                <th>Director</th>
+                <td>{{ pelicula[director] }}</td>
+            </tr> 
+            <tr>
+                <th>Guionista</th>
+                <td>{{ pelicula[guionista] }}</td>
+            </tr> 
+            <tr>
+                <th>Reparto</th>
+                <td>{{ pelicula[reparto] }}</td>
+            </tr>
+            <tr>
+                <th>Argumento</th>
+                <td>{{ pelicula[argumento] }}</td>
+            </tr>
+        </table> 
         <br/>
             <button name="btnselected" value="pelicula[q,pag]" type="submit" class="miboton  button-primary">Volver</button>
     </form>

@@ -5,19 +5,19 @@
         <table class="u-full-width">
                 <tr>
                     <th>sel.</th>
-                    <td>{% block imagen %} pelicula[imagen] {% endblock %}</td>
+                    <td rowspan="2">{{ pelicula[imagen] }}</td>
+                    <th>Titulo:</th>
+                    <td>{{ pelicula[titulo] }}</td>
                 </tr>
                 <tr>
-                    <th>titulo</th>
-                    <td>{% block datos %} pelicula[titulo] {% endblock %}</td>
+                    <th></th>
+                    <th>Año</th>
+                    <td>{{ pelicula[año] }}</td>
                 </tr>
-                <tr>
-                    <th>año</th>
-                    <td>{% block datos %} pelicula[año] {% endblock %}</td>
-                </tr>
+                
                 {% for titulo in pelicula[peliculas] %}
                 <tr>
-                    <td><input type="radio" name="Select" value="{{ pelicula[peliculas] }}"></td>
+                    <td><input type="radio" name="Select" value="sel."></td>
                     <td>{{titulo[0]}}</td>
                 </tr>
             </table>
