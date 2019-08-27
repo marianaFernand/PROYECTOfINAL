@@ -2,7 +2,7 @@
 {% block title %}{% endblock %}
 {% block body %} 
     <p>Escribe el titulo</p>
-    <form action="/indice.html" method="POST">
+    <form action="/indice" method="POST">
         {{ form.hidden_tag() }}
         <div class="busqueda">  
             <label for="titulo">{{form.titulo.label}}</label>
