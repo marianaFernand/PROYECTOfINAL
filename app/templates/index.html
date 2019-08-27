@@ -2,15 +2,13 @@
 {% block title %}{% endblock %}
 {% block body %} 
     <p>Escribe el titulo</p>
-    <form action="titulo" method="POST">
+    <form action="/indice.html" method="POST">
         {{ form.hidden_tag() }}
-        <div class="row">
-            <div class="busqueda">  
-                <label for="titulo">{{form.titulo.label}}</label>
-                {{form.titulo(class="u-full-width", type="text" placeholder ="titulo" id="titulo")}}
-            </div>
+        <div class="busqueda">  
+            <label for="titulo">{{form.titulo.label}}</label>
+            {{form.titulo(class="u-full-width", type="text" placeholder ="titulo" id="titulo")}}
         </div>   
         <br/>
-        <button name="btnselected" value="aceptar" type="submit" class="miboton  button-primary">Aceptar</button>
+        <p>{{ form.submit() }}</p>
     </form>
 {% endblock %}

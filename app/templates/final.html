@@ -1,39 +1,36 @@
 {% extends 'base.html' %}
-{% block title %} te cuento un poco... {% endblock %}
+{% block title %} {{ pelicula["Title"] }} {% endblock %}
 {% block body %} 
-    <form action="/detalle" method="GET">
         <table class="u-full-width">
             <tr>
-                <td rowspan="7">{{ pelicula[imagen] }}</td>
+                <td rowspan="7"><img src="{{ pelicula["Poster"] }}"/></td>
                 <th>Titulo</th>
-                    <td>{{ pelicula[titulo] }}</td>
+                    <td>{{ pelicula["Title"] }}</td>
             </tr>
             <tr>
                 <th>Año</th>
-                <td>{{ pelicula[año] }}</td>
+                <td>{{ pelicula["Year"] }}</td>
             </tr>
             <tr>
                 <th>Genero</th>
-                <td>{{ pelicula[genero] }}</td>
+                <td>{{ pelicula["Genre"] }}</td>
             </tr>
             <tr>
                 <th>Director</th>
-                <td>{{ pelicula[director] }}</td>
+                <td>{{ pelicula["Director"] }}</td>
             </tr> 
             <tr>
                 <th>Guionista</th>
-                <td>{{ pelicula[guionista] }}</td>
+                <td>{{ pelicula["Writer"] }}</td>
             </tr> 
             <tr>
                 <th>Reparto</th>
-                <td>{{ pelicula[reparto] }}</td>
+                <td>{{ pelicula["Actors"] }}</td>
             </tr>
             <tr>
                 <th>Argumento</th>
-                <td>{{ pelicula[argumento] }}</td>
+                <td>{{ pelicula["Plot"] }}</td>
             </tr>
         </table> 
         <br/>
-            <button name="btnselected" value="pelicula[q,pag]" type="submit" class="miboton  button-primary">Volver</button>
-    </form>
 {% endblock %}
