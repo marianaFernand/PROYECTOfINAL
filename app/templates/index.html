@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block title %}{% endblock %}
 {% block body %} 
-    <p>Escribe el titulo</p>
+    
     <form action="/indice" method="POST">
         {{ form.hidden_tag() }}
         <div class="busqueda">  
             <label for="titulo">{{form.titulo.label}}</label>
-            {{form.titulo(class="u-full-width", type="text" placeholder ="titulo" id="titulo")}}
+            {{form.titulo(class="u-full-width", type="text", placeholder ="titulo", id="titulo")}}
         </div>   
         <br/>
         <p>{{ form.submit() }}</p>

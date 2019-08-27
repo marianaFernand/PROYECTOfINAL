@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 {% block title %} Listado {% endblock %}
 {% block body %} 
-    <form action="/listado" method="GET">
+    <form action="/indice" method="GET">
         <table class="u-full-width">
             {% for pelicula in peliculas %}    
                 <tr>
-                    <td rowspan="2">{{ pelicula[imagen] }}</td>
+                    <td rowspan="2"><img src="{{ pelicula["Poster"] }}"/></td>
                     <th>Titulo</th>
-                    <td>{{ pelicula[titulo] }}</td>
+                    <td>{{ pelicula["Title"] }}</td>
                     <td rowspan="2"><button name="btnselected" value="Select" type="submit" class="miboton  button-primary">Detalle</button></td>
                 </tr>
                 <tr>
                     <th>Año</th>
-                    <td>{{ pelicula[año] }}</td>
+                    <td>{{ pelicula["Year"] }}</td>
                 </tr>
         </table>
         {% endfor %}   
