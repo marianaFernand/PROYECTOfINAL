@@ -1,26 +1,61 @@
 {% extends 'base.html' %}
 {% block title %} Listado {% endblock %}
 {% block body %} 
-    <form action="/indice" method="GET">
+    <form action="/final" method="POST">
+        <input id="pagina" name="pagina" type="hidden" value="{{ paginaActual }}">
+        <input id="titulo" name="titulo" type="hidden" value="{{ busquedActual }}">
         <table class="u-full-width">
             {% for pelicula in peliculas %}    
                 <tr>
-                    <td rowspan="2"><img src="{{ pelicula["Poster"] }}"/></td>
+                    <td rowspan="2">
+                        {% if pelicula["Poster"] == "N/A" %}
+
+                        <img style="max-width: 300px; max-height: 425px" src="http://www.josco.com.au/wp-content/uploads/2016/05/Image-Unavailable.jpg"/>
+                        {% else %}
+                        <img src="{{ pelicula["Poster"] }}"/>
+                        {% endif %}
+
+                    </td>
                     <th>Titulo</th>
                     <td>{{ pelicula["Title"] }}</td>
-                    <td rowspan="2"><button name="btnselected" value="Select" type="submit" class="miboton  button-primary">Detalle</button></td>
+                    <td rowspan="2"><button name="btnselected" value="{{ pelicula["imdbID"] }}" type="submit" class="miboton  button-primary">Detalle</button></td>
                 </tr>
                 <tr>
                     <th>Año</th>
                     <td>{{ pelicula["Year"] }}</td>
+        
                 </tr>
+            {% endfor %}
         </table>
-        {% endfor %}   
+    </form>   
         <br/>
             
-    {% if paginas > 1 %}
-            <button name="btnselected" value="Select" type="submit" class="miboton  button-primary">ant.</button>
-            <button name="btnselected" value="Select" type="submit" class="miboton  button-primary">sig.</button>
-    {% endif %}
+    <div>
+        <p>
+            Pagina {{ paginaActual }} de {{ totalPaginas }}
+        </p>
+    </div>
+        
+    {% if paginaActual > 1 %}
+    <form action="/indice" method="POST">
+        <input id="pagina" name="pagina" type="hidden" value="{{ paginaActual - 1 }}">
+        <input id="titulo" name="titulo" type="hidden" value="{{ busquedActual }}">
+    
+        <button name="btnselected" value="Select"
+                type="submit" class="miboton  button-primary">ant.</button>
     </form>
+    {% endif %}
+    
+    {% if paginaActual < totalPaginas  %}
+    <form action="/indice" method="POST">
+        <input id="pagina" name="pagina" type="hidden" value="{{ paginaActual + 1 }}">
+        <input id="titulo" name="titulo" type="hidden" value="{{ busquedActual }}">
+    
+        <button name="btnselected" value="Select"
+                type="submit" class="miboton  button-primary">sig.</button>
+    </form>
+    {% endif %}
+
+
+
 {% endblock %}

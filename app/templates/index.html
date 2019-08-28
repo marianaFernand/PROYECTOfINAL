@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block title %}{% endblock %}
 {% block body %} 
+
+    <p>
+        {{ errorMsg }}
+    </p>
     
     <form action="/indice" method="POST">
         {{ form.hidden_tag() }}

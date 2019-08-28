@@ -1,9 +1,22 @@
 {% extends 'base.html' %}
 {% block title %} {{ pelicula["Title"] }} {% endblock %}
-{% block body %} 
+{% block body %}
+        <form action="/indice" method="POST" >
+            <input id="pagina" name="pagina" type="hidden" value="{{ paginaActual }}">
+            <input id="titulo" name="titulo" type="hidden" value="{{ busquedActual }}">
+            <button name="btnselected" value="volvemos" type="submit" class="miboton  button-primary">Volver</button>
+        </form>
+        
         <table class="u-full-width">
             <tr>
-                <td rowspan="7"><img src="{{ pelicula["Poster"] }}"/></td>
+                <td rowspan="7">
+                        {% if pelicula["Poster"] == "N/A" %}
+
+                        <img style="max-width: 300px; max-height: 425px" src="http://www.josco.com.au/wp-content/uploads/2016/05/Image-Unavailable.jpg"/>
+                        {% else %}
+                        <img src="{{ pelicula["Poster"] }}"/>
+                        {% endif %}
+                </td>
                 <th>Titulo</th>
                     <td>{{ pelicula["Title"] }}</td>
             </tr>
