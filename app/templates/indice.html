@@ -2,8 +2,11 @@
 {% block title %} Listado {% endblock %}
 {% block body %} 
     <form action="/final" method="POST">
-        <input id="pagina" name="pagina" type="hidden" value="{{ paginaActual }}">
-        <input id="titulo" name="titulo" type="hidden" value="{{ busquedActual }}">
+        <input id="pagina" name="pagina"
+               type="hidden" value="{{ paginaActual }}">
+        <input id="titulo" name="titulo"
+               type="hidden" value="{{ busquedActual }}">
+        
         <table class="u-full-width">
             {% for pelicula in peliculas %}    
                 <tr>
@@ -31,7 +34,7 @@
         <br/>
             
     <div>
-        <p>
+        <p class="marcaPaginas">
             Pagina {{ paginaActual }} de {{ totalPaginas }}
         </p>
     </div>
@@ -55,7 +58,4 @@
                 type="submit" class="miboton  button-primary">sig.</button>
     </form>
     {% endif %}
-
-
-
 {% endblock %}

@@ -1,32 +1,34 @@
 
-head {
-    background-color: #891862;
-    padding-top: 16px;
-    font-family: fantasy;
-    font-weight: 900;
-    color: black; 
-}
 
 body {
-    background-color: #FFE19B;
+    background-color: #FF1654;
 }
 
 .header{
-    background-color: #891862;
-    padding-top: 16px;
-    font-family: fantasy;
-    font-weight: 900;
+    background-color: #25c472;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1000;
     color: black; 
 }
 
 .miboton {
-    background-color: #FFAE8C;
+    
+    background-color: #25c472;
+    font-family: 'Courier New', Courier, monospace;
     color: black;
     margin-left: 8px;
 }
 
+
 .busqueda {
-    color: #99DDA1;
-    font-weight: 900;
+    color: black;
+    font-size: 40;
     font-family: fantasy;
+}
+
+.marcaPaginas {
+    font-family: fantasy;
+    color: black;
+    font-size: 20;
+    
 }

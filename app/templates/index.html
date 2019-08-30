@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}{% endblock %}
 {% block body %} 
-
     <p>
         {{ errorMsg }}
     </p>
-    
     <form action="/indice" method="POST">
         {{ form.hidden_tag() }}
         <div class="busqueda">  
@@ -13,8 +11,6 @@
             {{form.titulo(class="u-full-width", type="text", placeholder ="titulo", id="titulo")}}
         </div>   
         <br/>
-        
-        <p>{{ form.submit() }}</p>
-        
+        <p class = "miboton">{{ form.submit() }}</p>
     </form>
 {% endblock %}
