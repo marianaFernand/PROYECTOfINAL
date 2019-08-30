@@ -1,20 +1,32 @@
-.header {
-    background-color: #e85d75;
-    color: black;
+
+head {
+    background-color: #891862;
     padding-top: 16px;
+    font-family: fantasy;
+    font-weight: 900;
+    color: black; 
 }
 
-.general-error {
-    color: red;
-    background-color: yellow;
-    font-weight: bold;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    text-align: center;
-    border: 1px solid black;
+body {
+    background-color: #FFE19B;
 }
+
+.header{
+    background-color: #891862;
+    padding-top: 16px;
+    font-family: fantasy;
+    font-weight: 900;
+    color: black; 
+}
+
 .miboton {
-    background-color: #A0D789;
+    background-color: #FFAE8C;
     color: black;
     margin-left: 8px;
+}
+
+.busqueda {
+    color: #99DDA1;
+    font-weight: 900;
+    font-family: fantasy;
 }
