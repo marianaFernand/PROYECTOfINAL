@@ -1,34 +1,70 @@
 
 
 body {
-    background-color: #FF1654;
+    background-color: #FF5956;
 }
-
-.header{
-    background-color: #25c472;
+.menu {
+    color:#003B5A;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 1000;
-    color: black; 
+    font-size: 20;
+    font-weight:bold;
 }
-
-.miboton {
-    
-    background-color: #25c472;
+.header h1{
+    text-align: center;
+    font-size: 80;
+    background-color: #003B5A;
     font-family: 'Courier New', Courier, monospace;
-    color: black;
-    margin-left: 8px;
+    font-weight:bold;
+    color: #FFCC57; 
 }
-
 
 .busqueda {
-    color: black;
-    font-size: 40;
-    font-family: fantasy;
+    color: #003B5A;
+    font-size: 50;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.marcaPaginas {
-    font-family: fantasy;
-    color: black;
+
+.miboton {
+    background-color: #33C3F0;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    margin-left: 8px;
     font-size: 20;
+}
+
+
+.marcaPaginas {
+    font-family: 'Courier New', Courier, monospace;
+    color:#030505;
+    font-size: 20;
+    display: flex;
+    justify-content: space-between;
     
+}
+.pagina {
+    font-family: 'Courier New', Courier, monospace;
+    color: #003B5A;
+    font-size: 20;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.tabla {
+    font-family: 'Courier New', Courier, monospace;
+    color:#003B5A;
+    font-size: 20;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.error {
+    font-family: 'Courier New', Courier, monospace;
+    color: red;
+    font-size: 50;
+    font-weight:bold;
+    justify-content: center;
 }

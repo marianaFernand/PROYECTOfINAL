@@ -7,41 +7,40 @@
             <button name="btnselected" value="volvemos" type="submit" class="miboton  button-primary">Volver</button>
         </form>
         
-        <table class="u-full-width" >
+        <table class="tabla u-full-width" >
             <tr>
                 <td rowspan="7">
                         {% if pelicula["Poster"] == "N/A" %}
-
                         <img style="max-width: 300px; max-height: 425px" src="http://www.josco.com.au/wp-content/uploads/2016/05/Image-Unavailable.jpg"/>
                         {% else %}
-                        <img src="{{ pelicula["Poster"] }}"/>
+                        <img style="max-width: 300px; max-height: 425px"  src="{{ pelicula["Poster"] }}" onerror="this.src='http://www.josco.com.au/wp-content/uploads/2016/05/Image-Unavailable.jpg';"/>
                         {% endif %}
                 </td>
-                <th>Titulo</th>
-                    <td>{{ pelicula["Title"] }}</td>
+            <th>TITULO</th>
+                <td>{{ pelicula["Title"] }}</td>
             </tr>
             <tr>
-                <th>Año</th>
+                <th>AÑO</th>
                 <td>{{ pelicula["Year"] }}</td>
             </tr>
             <tr>
-                <th>Genero</th>
+                <th>GENERO</th>
                 <td>{{ pelicula["Genre"] }}</td>
             </tr>
             <tr>
-                <th>Director</th>
+                <th>DIRECTOR</th>
                 <td>{{ pelicula["Director"] }}</td>
             </tr> 
             <tr>
-                <th>Guionista</th>
+                <th>GUIONISTA</th>
                 <td>{{ pelicula["Writer"] }}</td>
             </tr> 
             <tr>
-                <th>Reparto</th>
+                <th>REPARTO</th>
                 <td>{{ pelicula["Actors"] }}</td>
             </tr>
             <tr>
-                <th>Argumento</th>
+                <th>ARGUMENTO</th>
                 <td>{{ pelicula["Plot"] }}</td>
             </tr>
         </table> 

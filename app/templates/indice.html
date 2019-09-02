@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %} Listado {% endblock %}
+{% block title %}{% endblock %}
 {% block body %} 
     <form action="/final" method="POST">
         <input id="pagina" name="pagina"
@@ -7,7 +7,7 @@
         <input id="titulo" name="titulo"
                type="hidden" value="{{ busquedActual }}">
         
-        <table class="u-full-width">
+        <table class="tabla u-full-width">
             {% for pelicula in peliculas %}    
                 <tr>
                     <td rowspan="2">
@@ -15,16 +15,17 @@
 
                         <img style="max-width: 300px; max-height: 425px" src="http://www.josco.com.au/wp-content/uploads/2016/05/Image-Unavailable.jpg"/>
                         {% else %}
-                        <img src="{{ pelicula["Poster"] }}"/>
+                        <img style="max-width: 300px; max-height: 425px"  src="{{ pelicula["Poster"] }}" onerror="this.src='http://www.josco.com.au/wp-content/uploads/2016/05/Image-Unavailable.jpg';"/>
+                        
                         {% endif %}
 
                     </td>
-                    <th>Titulo</th>
+                    <th>TITULO</th>
                     <td>{{ pelicula["Title"] }}</td>
                     <td rowspan="2"><button name="btnselected" value="{{ pelicula["imdbID"] }}" type="submit" class="miboton  button-primary">Detalle</button></td>
                 </tr>
                 <tr>
-                    <th>Año</th>
+                    <th>AÑO</th>
                     <td>{{ pelicula["Year"] }}</td>
         
                 </tr>
@@ -34,18 +35,18 @@
         <br/>
             
     <div>
-        <p class="marcaPaginas">
+        <p class="pagina">
             Pagina {{ paginaActual }} de {{ totalPaginas }}
         </p>
     </div>
-        
+    <div class="marcaPaginas">
     {% if paginaActual > 1 %}
     <form action="/indice" method="POST">
         <input id="pagina" name="pagina" type="hidden" value="{{ paginaActual - 1 }}">
         <input id="titulo" name="titulo" type="hidden" value="{{ busquedActual }}">
     
         <button name="btnselected" value="Select"
-                type="submit" class="miboton  button-primary">ant.</button>
+                type="submit" class="anterior  button-primary">ant.</button>
     </form>
     {% endif %}
     
@@ -55,7 +56,8 @@
         <input id="titulo" name="titulo" type="hidden" value="{{ busquedActual }}">
     
         <button name="btnselected" value="Select"
-                type="submit" class="miboton  button-primary">sig.</button>
+                type="submit" class="siguiente  button-primary">sig.</button>
     </form>
     {% endif %}
+    </div> 
 {% endblock %}
