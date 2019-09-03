@@ -15,13 +15,10 @@ def index():
     
 @app.route('/indice', methods= ['GET','POST'])
 def indice():
-    
     if request.method == 'POST':
-        
         paginaActual = int (request.form["pagina"])
         busquedActual = request.form["titulo"]
         
-
         URL = config.ALL_FILM.format(config.SECRET_KEY, busquedActual ,paginaActual )
         data_lista = requests.get(URL).text
         lista = json.loads(data_lista)
@@ -36,7 +33,6 @@ def indice():
         if totalPeliculas % 10 != 0:
             totalPaginas = totalPaginas + 1
         
-
         return render_template('indice.html',
                            peliculas = peliculas,
                            paginaActual = paginaActual,

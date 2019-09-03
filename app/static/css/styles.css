@@ -1,14 +1,7 @@
-
-
 body {
     background-color: #FF5956;
 }
-.menu {
-    color:#003B5A;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 20;
-    font-weight:bold;
-}
+
 .header h1{
     text-align: center;
     font-size: 80;
@@ -17,14 +10,11 @@ body {
     font-weight:bold;
     color: #FFCC57; 
 }
-
 .busqueda {
     color: #003B5A;
     font-size: 50;
     font-family: 'Courier New', Courier, monospace;
 }
-
-
 .miboton {
     background-color: #33C3F0;
     font-family: 'Courier New', Courier, monospace;
@@ -32,15 +22,12 @@ body {
     margin-left: 8px;
     font-size: 20;
 }
-
-
 .marcaPaginas {
     font-family: 'Courier New', Courier, monospace;
     color:#030505;
     font-size: 20;
     display: flex;
     justify-content: space-between;
-    
 }
 .pagina {
     font-family: 'Courier New', Courier, monospace;
@@ -48,7 +35,6 @@ body {
     font-size: 20;
     display: flex;
     justify-content: center;
-    
 }
 
 .tabla {
@@ -58,9 +44,7 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
-
 }
-
 .error {
     font-family: 'Courier New', Courier, monospace;
     color: red;
@@ -68,3 +52,16 @@ body {
     font-weight:bold;
     justify-content: center;
 }
+
+.menu {
+        background: none!important;
+        border: none;
+        padding: 0!important;
+        font-family: 'Courier New', Courier, monospace;
+        color: #003B5A;
+        font-size: 20;
+        text-decoration: underline;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    
