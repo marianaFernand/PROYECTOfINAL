@@ -22,6 +22,7 @@ def indice():
         URL = config.ALL_FILM.format(config.SECRET_KEY, busquedActual ,paginaActual )
         data_lista = requests.get(URL).text
         lista = json.loads(data_lista)
+        
 
         if lista['Response'] != 'True':
             return redirect ( './?errorMsg=No+hay+resultados+de+b%C3%BAsqueda')
@@ -29,15 +30,20 @@ def indice():
         peliculas = lista["Search"]
         totalPeliculas = int (lista["totalResults"])
         
+        
         totalPaginas = totalPeliculas // 10
         if totalPeliculas % 10 != 0:
             totalPaginas = totalPaginas + 1
+    
         
+        pagina = 1
         return render_template('indice.html',
                            peliculas = peliculas,
                            paginaActual = paginaActual,
                            busquedActual = busquedActual,
-                           totalPaginas = totalPaginas)
+                           totalPaginas = totalPaginas,
+                           pagina = pagina)
+                           
     return redirect (url_for('index'))
 
 @app.route('/final', methods= ['GET','POST'])

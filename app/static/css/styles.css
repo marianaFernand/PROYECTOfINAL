@@ -54,14 +54,27 @@ body {
 }
 
 .menu {
-        background: none!important;
-        border: none;
-        padding: 0!important;
-        font-family: 'Courier New', Courier, monospace;
-        color: #003B5A;
-        font-size: 20;
-        text-decoration: underline;
-        cursor: pointer;
-        font-weight: bold;
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    font-family: 'Courier New', Courier, monospace;
+    color: #003B5A;
+    font-size: 20;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
     }
-    
+.paginado_li {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: underline;
+    cursor: pointer;  
+    display: inline;
+
+}
+
+.marcapaginas_p {
+   text-align: center;
+}

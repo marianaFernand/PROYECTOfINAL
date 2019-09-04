@@ -19,12 +19,15 @@
                              src="http://www.josco.com.au/wp-content/uploads/2016/05/Image-Unavailable.jpg"/>
                         {% else %}
                         <img style="max-width: 187px; max-height: 270px"  
-                             src="{{ pelicula["Poster"] }}" onerror="this.src='http://www.josco.com.au/wp-content/uploads/2016/05/Image-Unavailable.jpg';"/>
+                             src="{{ pelicula["Poster"] }}"
+                             onerror="this.src='http://www.josco.com.au/wp-content/uploads/2016/05/Image-Unavailable.jpg';"/>
                         {% endif %}
                     </td>
                     <th>TITULO</th>
                     <td>{{ pelicula["Title"] }}</td>
-                    <td rowspan="2"><button name="btnselected" value="{{ pelicula["imdbID"] }}" type="submit" class="miboton  button-primary">Detalle</button></td>
+                    <td rowspan="2"><button name="btnselected"
+                        value="{{ pelicula["imdbID"] }}" type="submit"
+                        class="miboton  button-primary">Detalle</button></td>
                 </tr>
                 <tr>
                     <th>AÑO</th>
@@ -34,19 +37,45 @@
         </table>
     </form>   
         <br/>
-            
-    <div>
-    <form action="/indice" method="POST">
-    <p>Pagina {{ paginaActual }} de {{ totalPaginas }}
-            <ul>
-                hojas= range (totalPaginas)
-                {% for pagina in totalPaginas %}
-                <li><a href="/app/templates/indice.html">{{pagina+1}}</a></li>            
-                {% endfor %}
-            </ul>
-        </p>
-    </form>
+    <div">
+        <p class = "marcapaginas_p">Pagina {{ paginaActual }} de {{ totalPaginas }}</p>
+        {% if paginaActual + 3 >= totalPaginas and paginaActual -2 < 0  %}
+            {%for pagina in range (paginaActual -2,paginaActual +3)%}
+            <form action="/indice" method="POST" class="paginado_li" >
+                <input id="hoja" name="pagina"
+                    type="hidden" value="{{ pagina }}"> 
+                <input id="titulo" name="titulo"
+                    type="hidden" value="{{ busquedActual }}">
+                <button name="btnselected" value="Select"type="submit"
+                        class="paginado_li  button-primary">{{ pagina }}</button>
+            </form>
+            {% endfor %}
+           
+        {%elif  paginaActual + 3 > totalPaginas  %}
+            {%for pagina in range (paginaActual -2,totalpaginas)%}
+            <form action="/indice" method="POST" class="paginado_li" >
+                <input id="hoja" name="pagina"
+                    type="hidden" value="{{ pagina }}"> 
+                <input id="titulo" name="titulo"
+                    type="hidden" value="{{ busquedActual }}">
+                <button name="btnselected" value="Select"type="submit"
+                        class="paginado_li  button-primary">{{ pagina }}</button>
+            </form>
+            {% endfor %}
+        {%else  paginaActual -2 <= 0 %}
+            {%for pagina in range (paginaActual,totalpaginas+2)%}
+            <form action="/indice" method="POST" class="paginado_li" >
+                <input id="hoja" name="pagina"
+                    type="hidden" value="{{ pagina }}"> 
+                <input id="titulo" name="titulo"
+                    type="hidden" value="{{ busquedActual }}">
+                <button name="btnselected" value="Select"type="submit"
+                        class="paginado_li  button-primary">{{ pagina }}</button>
+            </form>
+            {% endfor %}
+        {% endif %}
     </div>
+    
     <div class="marcaPaginas">
     {% if paginaActual > 1 %}
     <form action="/indice" method="POST">
