@@ -1,7 +1,6 @@
 body {
     background-color: #FF5956;
 }
-
 .header h1{
     text-align: center;
     font-size: 80;
@@ -36,7 +35,6 @@ body {
     display: flex;
     justify-content: center;
 }
-
 .tabla {
     font-family: 'Courier New', Courier, monospace;
     color:#003B5A;
@@ -52,7 +50,6 @@ body {
     font-weight:bold;
     justify-content: center;
 }
-
 .menu {
     background: none!important;
     border: none;
@@ -71,10 +68,7 @@ body {
     font-family: 'Courier New', Courier, monospace;
     text-decoration: underline;
     cursor: pointer;  
-    display: inline;
-
 }
-
 .marcapaginas_p {
    text-align: center;
 }

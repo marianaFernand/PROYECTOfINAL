@@ -35,14 +35,20 @@ def indice():
         if totalPeliculas % 10 != 0:
             totalPaginas = totalPaginas + 1
     
-        
+        v_minimo = 1
+        if totalPaginas>=5:
+            v_minimo = 5
+        else:
+            v_minimo= totalPaginas
+                
         pagina = 1
         return render_template('indice.html',
                            peliculas = peliculas,
                            paginaActual = paginaActual,
                            busquedActual = busquedActual,
                            totalPaginas = totalPaginas,
-                           pagina = pagina)
+                           pagina = pagina,
+                           v_minimo = v_minimo)
                            
     return redirect (url_for('index'))
 
