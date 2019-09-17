@@ -61,21 +61,22 @@ body {
     cursor: pointer;
     font-weight: bold;
     }
-.paginado_li {
+.paginado > form > button {
     background: none!important;
     border: none;
     padding: 0!important;
     font-family: 'Courier New', Courier, monospace;
     text-decoration: underline;
-    cursor: pointer;  
+    cursor: pointer;
+    text-align:center;
+    display: block;
+
 }
 .marcapaginas_p {
     text-align: center;
-    
 }
 
-.paginado {
-    justify-content: center;
-    text-align: center;
-
+.paginado{
+    text-align:center;
+    display: block;
 }
