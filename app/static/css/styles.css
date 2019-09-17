@@ -70,5 +70,12 @@ body {
     cursor: pointer;  
 }
 .marcapaginas_p {
-   text-align: center;
+    text-align: center;
+    
+}
+
+.paginado {
+    justify-content: center;
+    text-align: center;
+
 }
