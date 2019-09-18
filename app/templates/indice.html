@@ -42,37 +42,37 @@
     <div class = "paginado">   
     {%if paginaActual -2  <= 0 %}
         {%for pagina in range (1,v_minimo +1)%}
-        <form action="/indice" method="POST" class = "paginado_n" >
-            <input id="hoja" name="pagina"
-                type="hidden" value="{{ pagina }}"> 
-            <input id="titulo" name="titulo"
-                type="hidden" value="{{ busquedActual }}">
-             <button name="btnselected" value="Select"type="submit"
-                  button-primary">{{ pagina }}</button>
-        </form>
+            <form action="/indice" method="POST" class = "paginado_n" >
+                <input id="hoja" name="pagina"
+                    type="hidden" value="{{ pagina }}"> 
+                <input id="titulo" name="titulo"
+                    type="hidden" value="{{ busquedActual }}">
+                <button name="btnselected" value="Select"type="submit"
+                    button-primary>{{ pagina }}</button>
+            </form>
         {% endfor %}
             
     {%elif paginaActual + 3 > totalPaginas %}
         {%for pagina in range (totalPaginas -5,totalPaginas +1)%}
-        <form action="/indice" method="POST" class = "paginado_n"  >
-            <input id="hoja" name="pagina"
-                type="hidden" value="{{ pagina }}"> 
-            <input id="titulo" name="titulo"
-                type="hidden" value="{{ busquedActual }}">
-            <button name="btnselected" value="Select"type="submit"
-                 button-primary">{{ pagina }}</button>
-        </form>
+            <form action="/indice" method="POST" class = "paginado_n"  >
+                <input id="hoja" name="pagina"
+                    type="hidden" value="{{ pagina }}"> 
+                <input id="titulo" name="titulo"
+                    type="hidden" value="{{ busquedActual }}">
+                <button name="btnselected" value="Select"type="submit"
+                    button-primary>{{ pagina }}</button>
+            </form>
         {% endfor %}
     {%else%}
         {%for pagina in range (paginaActual -2,paginaActual +3)%}
-        <form action="/indice" method="POST" class = "paginado_n">
-            <input id="hoja" name="pagina"
-                type="hidden" value="{{ pagina }}"> 
-            <input id="titulo" name="titulo"
-                type="hidden" value="{{ busquedActual }}">
-            <button name="btnselected" value="Select"type="submit"
-                 button-primary">{{ pagina }}</button>
-        </form>
+            <form action="/indice" method="POST" class = "paginado_n">
+                <input id="hoja" name="pagina"
+                    type="hidden" value="{{ pagina }}"> 
+                <input id="titulo" name="titulo"
+                    type="hidden" value="{{ busquedActual }}">
+                <button name="btnselected" value="Select"type="submit"
+                    button-primary>{{ pagina }}</button>
+            </form>
         {% endfor %}
     {% endif %}
     </div>

@@ -9,3 +9,10 @@
 
     Lanzar aplicación en desarrollo
         "flask run"
+#Crear documento "config.py" con los siguientes datos:
+    
+    SECRET_KEY= 'TU CLAVE'
+    
+    ALL_FILM = 'http://www.omdbapi.com/?apikey={}&s={}&v=1&type=movie&page={}'
+    
+    CHECK_FILM = 'http://www.omdbapi.com/?apikey={}&v=1&type=movie&i={}&plot=full'
