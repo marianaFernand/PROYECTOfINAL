@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}{% endblock %}
+{% block title %}<h1> DETALLE <br>{% endblock %}
 {% block body %} 
 <p class="menu">
     <a href="./">Inicio</a>
@@ -39,6 +39,7 @@
         <br/>
         
     <p class = "marcapaginas_p">Pagina {{ paginaActual }} de {{ totalPaginas }}</p>
+<div class = "indice">
     <div class = "paginado">   
     {%if paginaActual -2  <= 0 %}
         {%for pagina in range (1,v_minimo +1)%}
@@ -98,4 +99,5 @@
     </form>
     {% endif %}
     </div> 
+</div>
 {% endblock %}

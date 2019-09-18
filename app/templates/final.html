@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %} {{ pelicula["Title"] }} {% endblock %}
+{% block title %} DETALLE {% endblock %}
 {% block body %}
   
     <form class="menu" action="/indice" method="POST" >
@@ -21,7 +21,7 @@
                      src="{{ pelicula["Poster"] }}" onerror="this.src='http://www.josco.com.au/wp-content/uploads/2016/05/Image-Unavailable.jpg';"/>
                 {% endif %}
             </td>
-            <th>TITULO</th>
+            <th style="padding-left: 0">TITULO</th>
             <td>{{ pelicula["Title"] }}</td>
         </tr>
         <tr>

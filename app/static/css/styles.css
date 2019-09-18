@@ -21,13 +21,6 @@ body {
     margin-left: 8px;
     font-size: 20;
 }
-.marcaPaginas {
-    font-family: 'Courier New', Courier, monospace;
-    color:#030505;
-    font-size: 20;
-    display: flex;
-    justify-content: space-between;
-}
 .pagina {
     font-family: 'Courier New', Courier, monospace;
     color: #003B5A;
@@ -63,27 +56,36 @@ body {
     }
 .paginado > form > button {
     background: none!important;
-    border: none;
+    border:none;
+    margin-right: 5ex;
     padding: 0!important;
     font-family: 'Courier New', Courier, monospace;
     text-decoration: underline;
     cursor: pointer;
     text-align:center;
     display: block;
-
+    justify-content: space-between;
 }
 .marcapaginas_p {
     text-align: center;
 }
 
-.paginado{
-    text-align:center;
-    display:table;
-    margin-left: auto;
-    margin-right: auto;
-  
-}
+
 .paginado_n{
-  
     display: table-cell;
+    
 }
+.indice 
+    .paginado {
+        text-align:center;
+        display:table;
+        margin-left: auto;
+        margin-right: auto; 
+    }
+    .marcaPaginas {
+        font-family: 'Courier New', Courier, monospace;
+        color:#030505;
+        font-size: 20;
+        display: flex;
+        justify-content: space-between;
+    }
