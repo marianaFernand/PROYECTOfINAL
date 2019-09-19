@@ -87,5 +87,5 @@ body {
     color:#030505;
     font-size: 20;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
