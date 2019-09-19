@@ -75,17 +75,17 @@ body {
     display: table-cell;
     
 }
-.indice 
-    .paginado {
-        text-align:center;
-        display:table;
-        margin-left: auto;
-        margin-right: auto; 
-    }
-    .marcaPaginas {
-        font-family: 'Courier New', Courier, monospace;
-        color:#030505;
-        font-size: 20;
-        display: flex;
-        justify-content: space-between;
-    }
+
+.paginado {
+    text-align:center;
+    display:table;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.marcaPaginas {
+    font-family: 'Courier New', Courier, monospace;
+    color:#030505;
+    font-size: 20;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
-{% block title %} DETALLE {% endblock %}
+{% block title %}
+{{ pelicula["Title"] }} -PELICULEITOR
+{% endblock %}
 {% block body %}
   
     <form class="menu" action="/indice" method="POST" >
