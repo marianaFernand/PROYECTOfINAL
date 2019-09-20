@@ -51,8 +51,13 @@ Resultados: {{ busquedActual }} -PELICULEITOR
                     type="hidden" value="{{ pagina }}"> 
                 <input id="titulo" name="titulo"
                     type="hidden" value="{{ busquedActual }}">
-                <button name="btnselected" value="Select" 
+                {% if pagina == paginaActual  %}
+                    <button name="btnselected" value="Select" class="oculto"
+                            button-primary>{{ pagina }}</button>
+                {%else%}
+                <button name="btnselected" value="Select"
                         button-primary>{{ pagina }}</button>
+                {% endif %}
             </form>
             
         {% endfor %}
@@ -64,8 +69,13 @@ Resultados: {{ busquedActual }} -PELICULEITOR
                     type="hidden" value="{{ pagina }}"> 
                 <input id="titulo" name="titulo"
                     type="hidden" value="{{ busquedActual }}">
-                <button name="btnselected" value="Select" 
+                {% if pagina == paginaActual  %}
+                    <button name="btnselected" value="Select" class="oculto"
+                            button-primary>{{ pagina }}</button>
+                {%else%}
+                <button name="btnselected" value="Select"
                         button-primary>{{ pagina }}</button>
+                {% endif %}
             </form>
         {% endfor %}
     {%else%}
@@ -75,24 +85,34 @@ Resultados: {{ busquedActual }} -PELICULEITOR
                     type="hidden" value="{{ pagina }}"> 
                 <input id="titulo" name="titulo"
                     type="hidden" value="{{ busquedActual }}">
-                <button name="btnselected" value="Select" 
-                        button-primary>{{ pagina }}</button>
                 
+                {% if pagina == paginaActual  %}
+                    <button name="btnselected" value="Select" class="oculto"
+                            button-primary>{{ pagina }}</button>
+                {%else%}
+                <button name="btnselected" value="Select"
+                        button-primary>{{ pagina }}</button>
+                {% endif %}
             </form>
         {% endfor %}
     {% endif %}
     </div>
     
     <div class="marcaPaginas">
-    {% if paginaActual > 1 %}
+    
     <form action="/indice" method="POST">
         <input id="pagina" name="pagina" type="hidden" value="{{ paginaActual - 1 }}">
         <input id="titulo" name="titulo" type="hidden" value="{{ busquedActual }}">
-    
+        {% if paginaActual > 1 %}
         <button name="btnselected" value="Select"
                 type="submit" class="anterior  button-primary"> ant.</button>
+        {%elif paginaActual == 1 %}
+        <button name="btnselected" value="Select"
+                type="submit" class="oculto anterior  button-primary"> ant.</button>
+        {% endif %}
+        
     </form>
-    {% endif %}
+    
     
     {% if paginaActual < totalPaginas  %}
     <form action="/indice" method="POST">
