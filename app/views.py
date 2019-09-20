@@ -35,11 +35,19 @@ def indice():
         if totalPeliculas % 10 != 0:
             totalPaginas = totalPaginas + 1
     
-        v_minimo = 1
-        if totalPaginas>=5:
-            v_minimo = 5
-        else:
-            v_minimo= totalPaginas
+        primeraPagina = paginaActual-2 
+        ultimaPagina = paginaActual+2 
+        if ultimaPagina <5:
+            ultimaPagina = 5
+        
+        
+        if ultimaPagina > totalPaginas:
+            ultimaPagina=totalPaginas
+            primeraPagina=totalPaginas-4
+        
+        if primeraPagina <1:
+            primeraPagina=1
+        
                 
         pagina = 1
         return render_template('indice.html',
@@ -48,7 +56,9 @@ def indice():
                            busquedActual = busquedActual,
                            totalPaginas = totalPaginas,
                            pagina = pagina,
-                           v_minimo = v_minimo)
+                           primeraPagina = primeraPagina,
+                           ultimaPagina = ultimaPagina
+                           )
                            
     return redirect (url_for('index'))
 

@@ -43,9 +43,7 @@ Resultados: {{ busquedActual }} -PELICULEITOR
     <p class = "marcapaginas_p">Pagina {{ paginaActual }} de {{ totalPaginas }}</p>
 
     <div class = "paginado">   
-    
-    {%if paginaActual -2  <= 0 %}
-        {%for pagina in range (1,v_minimo +1)%}
+        {%for pagina in range (primeraPagina,ultimaPagina+1)%}
             <form action="/indice" method="POST" class = "paginado_n" >
                 <input id="hoja" name="pagina"
                     type="hidden" value="{{ pagina }}"> 
@@ -61,41 +59,7 @@ Resultados: {{ busquedActual }} -PELICULEITOR
             </form>
             
         {% endfor %}
-            
-    {%elif paginaActual + 3 > totalPaginas %}
-        {%for pagina in range (totalPaginas -5,totalPaginas +1)%}
-            <form action="/indice" method="POST" class = "paginado_n"  >
-                <input id="hoja" name="pagina"
-                    type="hidden" value="{{ pagina }}"> 
-                <input id="titulo" name="titulo"
-                    type="hidden" value="{{ busquedActual }}">
-                {% if pagina == paginaActual  %}
-                    <button name="btnselected" value="Select" class="oculto"
-                            button-primary>{{ pagina }}</button>
-                {%else%}
-                <button name="btnselected" value="Select"
-                        button-primary>{{ pagina }}</button>
-                {% endif %}
-            </form>
-        {% endfor %}
-    {%else%}
-        {%for pagina in range (paginaActual -2,paginaActual +3)%}
-            <form action="/indice" method="POST" class = "paginado_n">
-                <input id="hoja" name="pagina"
-                    type="hidden" value="{{ pagina }}"> 
-                <input id="titulo" name="titulo"
-                    type="hidden" value="{{ busquedActual }}">
-                
-                {% if pagina == paginaActual  %}
-                    <button name="btnselected" value="Select" class="oculto"
-                            button-primary>{{ pagina }}</button>
-                {%else%}
-                <button name="btnselected" value="Select"
-                        button-primary>{{ pagina }}</button>
-                {% endif %}
-            </form>
-        {% endfor %}
-    {% endif %}
+
     </div>
     
     <div class="marcaPaginas">
@@ -112,16 +76,19 @@ Resultados: {{ busquedActual }} -PELICULEITOR
         {% endif %}
         
     </form>
-    
-    
-    {% if paginaActual < totalPaginas  %}
+
     <form action="/indice" method="POST">
         <input id="pagina" name="pagina" type="hidden" value="{{ paginaActual + 1 }}">
         <input id="titulo" name="titulo" type="hidden" value="{{ busquedActual }}">
     
+        {% if paginaActual < totalPaginas %}
         <button name="btnselected" value="Select"
-                type="submit" class="siguiente  button-primary">sig.</button>
+                type="submit" class="anterior  button-primary"> sig.</button>
+        {%elif paginaActual == totalPaginas %}
+        <button name="btnselected" value="Select"
+                type="submit" class="oculto anterior  button-primary"> sig.</button>
+        {% endif %}
     </form>
-    {% endif %}
+
     </div> 
 {% endblock %}
