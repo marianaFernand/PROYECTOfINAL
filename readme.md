@@ -1,5 +1,5 @@
 # Puedes consultar la pagina en
-    [PELICULEITOR.COM](http://3.15.234.177/)
+[PELICULEITOR.COM](http://3.15.234.177/)
 
 # Instalación en local
 ## Instalación de dependencias
