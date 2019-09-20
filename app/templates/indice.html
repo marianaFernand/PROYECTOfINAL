@@ -51,10 +51,10 @@ Resultados: {{ busquedActual }} -PELICULEITOR
                     type="hidden" value="{{ pagina }}"> 
                 <input id="titulo" name="titulo"
                     type="hidden" value="{{ busquedActual }}">
-                <button name="btnselected" value="Select"type="submit" 
-                    button-primary>{{ pagina }}</button>
-                
+                <button name="btnselected" value="Select" 
+                        button-primary>{{ pagina }}</button>
             </form>
+            
         {% endfor %}
             
     {%elif paginaActual + 3 > totalPaginas %}
@@ -65,7 +65,7 @@ Resultados: {{ busquedActual }} -PELICULEITOR
                 <input id="titulo" name="titulo"
                     type="hidden" value="{{ busquedActual }}">
                 <button name="btnselected" value="Select" 
-                    button-primary>{{ pagina }}</button>
+                        button-primary>{{ pagina }}</button>
             </form>
         {% endfor %}
     {%else%}
@@ -75,8 +75,8 @@ Resultados: {{ busquedActual }} -PELICULEITOR
                     type="hidden" value="{{ pagina }}"> 
                 <input id="titulo" name="titulo"
                     type="hidden" value="{{ busquedActual }}">
-                <button name="btnselected" value="Select"
-                    button-primary>{{ pagina }}</button>
+                <button name="btnselected" value="Select" 
+                        button-primary>{{ pagina }}</button>
                 
             </form>
         {% endfor %}
@@ -104,5 +104,4 @@ Resultados: {{ busquedActual }} -PELICULEITOR
     </form>
     {% endif %}
     </div> 
-
 {% endblock %}

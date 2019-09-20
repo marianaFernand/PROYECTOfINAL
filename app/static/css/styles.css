@@ -1,4 +1,4 @@
-body {
+.body {
     background-color: #FF5956;
 }
 .header h1{
@@ -88,4 +88,5 @@ body {
     font-size: 20;
     display: flex;
     justify-content: space-around;
+    
 }
